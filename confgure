@@ -1,0 +1,5 @@
+ovs/configure KARCH=arm 
+cd ovs; make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-
+
+
+
