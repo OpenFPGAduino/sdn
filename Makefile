@@ -16,7 +16,7 @@ openvswitch:
 	CFLAGS="-march=armv5 -std=gnu99" \
 	CCFLAGS="-march=armv5 -std=gnu99" \
 	CXXFLAGS="-march=armv5 -std=gnu99s" \
-	--host=arm --with-openssl=../../node/deps/openssl;\
+	--host=arm --with-openssl=../../node/deps/openssl --prefix=../../rootfs/fs/;\
 	make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- \
 	CPP="arm-none-linux-gnueabi-gcc -E" \
 	AR="arm-none-linux-gnueabi-ar" \
@@ -33,7 +33,7 @@ openvswitch:
 	CXXFLAGS="-march=armv5 -std=gnu99" 
 opendaylight.tar.gz:
 	wget -c -t 0 -O opendaylight.tar.gz https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/distribution-karaf/0.4.1-Beryllium-SR1/distribution-karaf-0.4.1-Beryllium-SR1.tar.gz
-opendaylight:
+opendaylight:opendaylight.tar.gz
 	tar -vxf opendaylight.tar.gz opendaylight/; rm opendaylight.tar.gz
 clean:
 	rm -rf opendaylight
