@@ -16,7 +16,7 @@ openvswitch:
 	CFLAGS="-march=armv5 -std=gnu99" \
 	CCFLAGS="-march=armv5 -std=gnu99" \
 	CXXFLAGS="-march=armv5 -std=gnu99s" \
-	--host=arm --with-openssl=../../node/deps/openssl --prefix=../../rootfs/fs/;\
+	--host=arm --with-openssl=../../node/deps/openssl --prefix=$$PWD/../../rootfs/fs/usr/local;\
 	make ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi- \
 	CPP="arm-none-linux-gnueabi-gcc -E" \
 	AR="arm-none-linux-gnueabi-ar" \
